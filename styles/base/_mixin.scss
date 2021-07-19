@@ -1,0 +1,7 @@
+@mixin responsive($bkr) {
+  @if $bkr == toMedium {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+}

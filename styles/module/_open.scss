@@ -1,0 +1,6 @@
+.open {
+  @include responsive(toMedium) {
+    left: 0;
+    width: 30rem;
+  }
+}

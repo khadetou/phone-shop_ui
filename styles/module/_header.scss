@@ -1,0 +1,165 @@
+.header {
+  position: relative;
+
+  &__navigation {
+    position: relative;
+    height: 7rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7rem;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  &__logoContainer {
+    @include responsive(toMedium) {
+      width: 50%;
+    }
+  }
+
+  &__logo {
+    font-size: 2.5rem;
+    color: $black;
+    padding: 1.6rem;
+    font-weight: 700;
+  }
+
+  &__menuToggle {
+    display: none;
+    cursor: pointer;
+
+    svg {
+      height: 2.3rem;
+      width: 2.3rem;
+    }
+
+    @include responsive(toMedium) {
+      display: block;
+    }
+  }
+
+  &__menu {
+    width: 50%;
+    @include responsive(toMedium) {
+      position: fixed;
+      top: 0;
+      left: -30rem;
+      width: 0;
+      background-color: $white;
+      z-index: 9990;
+      height: 100%;
+      transition: all 0.3s;
+    }
+  }
+  &__menuTop {
+    display: none;
+
+    @include responsive(toMedium) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $orange;
+      padding: 1.8rem 1rem;
+
+      svg {
+        height: 1.6rem;
+        width: 1.6rem;
+        fill: $primaryColor;
+      }
+    }
+  }
+  &__category {
+    @include responsive(toMedium) {
+      color: $white;
+      font-size: 2.3rem;
+      font-weight: 700;
+    }
+  }
+
+  &__ul {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+
+    @include responsive(toMedium) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.6rem 1rem;
+    }
+  }
+  &__li {
+    &:not(:last-child) {
+      margin-right: 1.6rem;
+    }
+
+    @include responsive(toMedium) {
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+  &__a:link,
+  &__a:visited {
+    display: inline-block;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: $black;
+    transition: color 0.3s ease-in-out;
+
+    @include responsive(toMedium) {
+      width: 100%;
+      padding: 1.6rem 0;
+      color: $grey2;
+    }
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    position: relative;
+  }
+
+  &__iconItem {
+    color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.7rem;
+    border: 1px solid $black;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    &:hover {
+      background-color: $orange;
+      border: 1px solid $black;
+    }
+
+    svg {
+      height: 1.6rem;
+      width: 1.6rem;
+    }
+  }
+
+  &__cartTotal {
+    font-size: 1rem;
+    position: absolute;
+    top: 2px;
+    right: -6px;
+    background-color: $orange;
+    padding: 0.2rem 0.4rem;
+    border-radius: 100%;
+    color: $primaryColor;
+  }
+}

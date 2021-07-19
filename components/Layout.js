@@ -1,8 +1,12 @@
+import Aos from "aos";
 import Meta from "./Meta";
-const Layout = () => {
+import Header from "./Header";
+const Layout = ({ children }) => {
   return (
     <>
+      <Header />
       <Meta />
+      <div>{children}</div>
     </>
   );
 };
