@@ -4,4 +4,14 @@
       @content;
     }
   }
+  @if $bkr == toSmall {
+    @media only screen and (max-width: 568px) {
+      @content;
+    }
+  }
+  @if $bkr== toLarge {
+    @media only screen and (max-width: 999px) {
+      @content;
+    }
+  }
 }

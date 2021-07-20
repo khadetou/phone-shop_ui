@@ -150,6 +150,14 @@
       height: 1.6rem;
       width: 1.6rem;
     }
+
+    @include responsive(toSmall) {
+      padding: 0.5rem;
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
   }
 
   &__cartTotal {

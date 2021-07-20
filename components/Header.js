@@ -1,5 +1,6 @@
 import styles from "../styles/style.module.scss";
 import Link from "next/link";
+import Hero from "./Hero";
 import { useState, useEffect } from "react";
 const Header = () => {
   const {

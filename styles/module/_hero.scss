@@ -1,0 +1,128 @@
+.hero {
+  background-color: $primaryColor;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  &__slides {
+    background-color: $primaryColor;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  &__bullet {
+    background-color: $black;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  &__arrows {
+    @include responsive(toLarge) {
+      display: none;
+    }
+  }
+  &__arrow {
+    padding: 1.5rem 1.7rem;
+    opacity: 0;
+    border: none;
+    background-color: $grey;
+    transition: all 0.5s ease-in-out 0.2s;
+    border-radius: 50%;
+
+    svg {
+      height: 1.8rem;
+      width: 1.8rem;
+      fill: $primaryColor;
+    }
+
+    &:hover {
+      background-color: $black3;
+    }
+  }
+  &:hover &__arrow {
+    opacity: 1;
+  }
+  &__arrowLeft {
+    left: 20rem;
+  }
+
+  &__arrowRight {
+    right: 20rem;
+  }
+  &:hover &__arrowLeft {
+    left: 23rem;
+  }
+  &:hover &__arrowRight {
+    right: 23rem;
+  }
+
+  &__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 114rem;
+    margin: 0 auto;
+    padding-top: 3rem;
+    height: 100%;
+
+    @include responsive(toLarge) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__left {
+    padding: 0 3rem;
+    flex: 0 0 50%;
+
+    @include responsive(toLarge) {
+      position: absolute;
+      padding: 0 1rem;
+      top: 20%;
+    }
+
+    h1 {
+      margin: 1rem 0;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+  &__button {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.4rem;
+    background-color: $black;
+    color: $primaryColor;
+    cursor: pointer;
+    margin: 1rem 0;
+    padding: 1.5rem 4rem;
+    border: 1px solid $black;
+    transition: all 0.3s ease-in-out;
+
+    @include responsive(toLarge) {
+      padding: 1.1rem 2.8rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      font-weight: 700;
+      background-color: transparent;
+      color: $black;
+    }
+  }
+
+  &__right {
+    flex: 0 0 50%;
+    text-align: center;
+    position: relative;
+
+    @include responsive(toLarge) {
+      top: 50%;
+      position: absolute;
+      width: 55%;
+    }
+  }
+}
