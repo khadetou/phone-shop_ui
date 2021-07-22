@@ -225,7 +225,26 @@
     border: 1px solid $primaryColor;
     outline: none;
     border-radius: 0;
-    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0);
+    box-shadow: 0 0.025em 0.5em rgba(0, 0, 0);
     left: 80%;
+    top: -7%;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: $grey;
+    }
+
+    &:hover {
+      background-color: $orange;
+      border: 1px solid $primaryColor;
+    }
+  }
+  &__arrowLeft {
+    left: 75%;
+  }
+
+  &__arrowRight {
+    right: 5%;
   }
 }
