@@ -1,18 +1,19 @@
 import styles from "../styles/style.module.scss";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Glide from "@glidejs/glide";
-
 import HeroItems from "./subcomponents/HeroItems";
 
 const Hero = () => {
+  const glide = useRef();
+  console.log(glide.current);
   useEffect(() => {
-    new Glide(".glide", {
+    new Glide(glide.current, {
       type: "carousel",
       startAt: 0,
-      //   autoplay: 3000,
+      autoplay: 3000,
       hoverpause: true,
       rewind: true,
-      preView: 1,
+      perView: 1,
       animationDuration: 800,
       animationTimingFunc: "linear",
     }).mount();
@@ -30,7 +31,7 @@ const Hero = () => {
 
   return (
     <div className={hero}>
-      <div className="glide">
+      <div className="glide" ref={glide}>
         <div className="glide__track" data-glide-el="track">
           <ul className={`glide__slides ${hero__slides}`}>
             {banners.map((banner, idx) => (

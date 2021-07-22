@@ -1,0 +1,231 @@
+.latest {
+  &__titleContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 6rem;
+    padding: 2rem 0;
+    background-color: $primaryColor;
+
+    @include responsive(toSmall) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    h1 {
+      font-size: 1.9rem;
+      font-weight: inherit;
+    }
+
+    &:hover .latest__primaryTitle,
+    &:hover .latest__dot,
+    &:hover .latest__dot::before {
+      opacity: 1;
+    }
+
+    @include responsive(toSmall) {
+      &:not(:last-child) {
+        margin: 0 0 1.3rem;
+      }
+    }
+  }
+
+  &__primaryTitle {
+    opacity: 0.6;
+    padding-left: 0.5rem;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &__dot {
+    opacity: 0.6;
+    padding: 0.45rem;
+    position: relative;
+    border: 1px solid $black;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 1px solid $black;
+      background-color: $black;
+      margin: 0.1rem;
+      opacity: 0.6;
+    }
+  }
+
+  &__active &__dot,
+  &__active &__dot::before,
+  &__active &__title {
+    opacity: 1;
+  }
+
+  &__product {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 25rem;
+
+    ul {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: 35%;
+      left: 50%;
+      width: 17rem;
+      height: 5rem;
+      background-color: rgba(255, 255, 255, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(-50%, -50%) scale(0.7);
+      transition: all 0.5s ease-in-out;
+
+      a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $orange;
+        height: 3.5rem;
+        width: 3.5rem;
+        cursor: pointer;
+        transition: 0.5s;
+        &:not(:last-child) {
+          margin-right: 1.6rem;
+        }
+
+        &:hover {
+          background-color: $black;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: -0.6rem;
+          left: -0.6rem;
+          height: 0;
+          width: 0;
+          border-top: solid 3px $orange;
+          border-left: solid 3px $orange;
+          transition: 0.5s;
+          opacity: 0;
+          z-index: 1;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -0.6rem;
+          right: -0.6rem;
+          width: 0;
+          height: 0;
+          border-bottom: 3px solid $orange;
+          border-right: 3px solid $orange;
+          z-index: 1;
+          opacity: 0;
+          transition: 0.5s;
+        }
+
+        &:hover::before {
+          width: 126%;
+          height: 126%;
+          border-top: solid 3px $orange;
+          border-left: solid 3px $orange;
+          opacity: 1;
+        }
+
+        &:hover::after {
+          width: 126%;
+          height: 126%;
+          border-bottom: 3px solid $orange;
+          border-right: 3px solid $orange;
+          opacity: 1;
+        }
+      }
+
+      svg {
+        width: 1.7rem;
+        height: 1.7rem;
+        fill: $white;
+      }
+    }
+
+    &:hover ul {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    @include responsive(toSmall) {
+    }
+  }
+
+  &__productHeader {
+    height: 25rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    position: relative;
+
+    img {
+      padding: inherit !important;
+    }
+  }
+
+  &__footer {
+    padding: 1rem 0;
+
+    h3 {
+      padding: 1rem 0;
+    }
+  }
+
+  &__productPrice {
+    padding-bottom: 1rem;
+  }
+
+  &__rating {
+    svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      fill: $yellow;
+    }
+  }
+  &__button {
+    display: inline;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 1.4rem 0;
+    border: 1px solid $black;
+    color: $black;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: $black;
+      color: $primaryColor;
+    }
+  }
+  &__arrow {
+    background-color: transparent;
+    border: 1px solid $primaryColor;
+    outline: none;
+    border-radius: 0;
+    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0);
+    left: 80%;
+  }
+}

@@ -1,6 +1,6 @@
 import styles from "../styles/style.module.scss";
 import CollectionBox from "./subcomponents/CollectionBox";
-const Main = () => {
+const Collection = () => {
   const {
     container,
     collection,
@@ -39,4 +39,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Collection;
