@@ -1,0 +1,7 @@
+.sectionActive {
+  & .sectionDot,
+  & .sectionDot::before,
+  & .titleContainer__primaryTitle {
+    opacity: 1;
+  }
+}

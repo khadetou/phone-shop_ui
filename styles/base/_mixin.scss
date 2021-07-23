@@ -14,4 +14,10 @@
       @content;
     }
   }
+
+  @if $bkr == toXSmall {
+    @media only screen and (max-width: 460px) {
+      @content;
+    }
+  }
 }

@@ -14,7 +14,7 @@ const LatestProduct = () => {
       rewind: true,
       perView: 4,
       animationDuration: 800,
-      animationTimingFunc: "cubic-bezier(0.165,0.840,0.44,0.1)",
+      animationTimingFunc: "ease-in-out",
       breakpoints: {
         1200: {
           perView: 3,
@@ -22,20 +22,17 @@ const LatestProduct = () => {
         768: {
           perView: 2,
         },
-        568: {
-          perView: 1,
-        },
       },
     }).mount();
   });
   const {
+    sectionTitles,
+    titleContainer,
+    titleContainer__primaryTitle,
+    sectionActive,
+    sectionDot,
     container,
     latest,
-    latest__titleContent,
-    latest__title,
-    latest__dot,
-    latest__primaryTitle,
-    latest__active,
     latest__center,
     latest__arrows,
     latest__arrow,
@@ -55,13 +52,13 @@ const LatestProduct = () => {
   ];
   return (
     <section className={latest}>
-      <div className={latest__titleContent}>
+      <div className={titleContainer}>
         <div
-          className={`${latest__title} ${latest__active}`}
+          className={`${sectionTitles} ${sectionActive}`}
           data-id="Latest Product"
         >
-          <span className={latest__dot}></span>
-          <h1 className={latest__primaryTitle}>Latest Products</h1>
+          <span className={sectionDot}></span>
+          <h1 className={titleContainer__primaryTitle}>Latest Products</h1>
         </div>
       </div>
 

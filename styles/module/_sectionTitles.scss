@@ -1,0 +1,23 @@
+.sectionTitles {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  h1 {
+    font-size: 1.9rem;
+    font-weight: inherit;
+  }
+
+  &:hover .titleContainer__primaryTitle,
+  &:hover .sectionDot,
+  &:hover .sectionDot::before {
+    opacity: 1;
+  }
+
+  @include responsive(toSmall) {
+    &:not(:last-child) {
+      margin: 0 0 1.3rem;
+    }
+  }
+}

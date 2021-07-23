@@ -1,75 +1,4 @@
 .latest {
-  &__titleContent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 6rem;
-    padding: 2rem 0;
-    background-color: $primaryColor;
-
-    @include responsive(toSmall) {
-      flex-direction: column;
-    }
-  }
-
-  &__title {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-
-    h1 {
-      font-size: 1.9rem;
-      font-weight: inherit;
-    }
-
-    &:hover .latest__primaryTitle,
-    &:hover .latest__dot,
-    &:hover .latest__dot::before {
-      opacity: 1;
-    }
-
-    @include responsive(toSmall) {
-      &:not(:last-child) {
-        margin: 0 0 1.3rem;
-      }
-    }
-  }
-
-  &__primaryTitle {
-    opacity: 0.6;
-    padding-left: 0.5rem;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  &__dot {
-    opacity: 0.6;
-    padding: 0.45rem;
-    position: relative;
-    border: 1px solid $black;
-    cursor: pointer;
-    transition: opacity 0.3s ease-in-out;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border: 1px solid $black;
-      background-color: $black;
-      margin: 0.1rem;
-      opacity: 0.6;
-    }
-  }
-
-  &__active &__dot,
-  &__active &__dot::before,
-  &__active &__title {
-    opacity: 1;
-  }
-
   &__product {
     position: relative;
     display: flex;
@@ -92,6 +21,13 @@
       transform: translate(-50%, -50%) scale(0.7);
       transition: all 0.5s ease-in-out;
 
+      @include responsive(toSmall) {
+        top: 25%;
+        left: 50%;
+        width: 16rem;
+        height: 4rem;
+      }
+
       a {
         position: relative;
         display: flex;
@@ -101,7 +37,13 @@
         height: 3.5rem;
         width: 3.5rem;
         cursor: pointer;
-        transition: 0.5s;
+        transition: 0.5s ease-in-out;
+
+        @include responsive(toSmall) {
+          width: 2.7rem;
+          height: 2.7rem;
+        }
+
         &:not(:last-child) {
           margin-right: 1.6rem;
         }
@@ -168,7 +110,9 @@
       transform: translate(-50%, -50%) scale(1);
     }
 
-    @include responsive(toSmall) {
+    @include responsive(toLarge) {
+      width: 70%;
+      margin: 0 auto;
     }
   }
 
@@ -177,6 +121,20 @@
     padding: 0.5rem 0;
     text-align: center;
     position: relative;
+
+    @include responsive(toLarge) {
+      height: 25rem;
+    }
+
+    @include responsive(toSmall) {
+      height: 20rem;
+      width: 50%;
+      margin: auto;
+    }
+
+    @include responsive(toXSmall) {
+      height: 12rem;
+    }
 
     img {
       padding: inherit !important;
@@ -188,6 +146,14 @@
 
     h3 {
       padding: 1rem 0;
+
+      @include responsive(toSmall) {
+        font-size: 1.4rem;
+      }
+
+      @include responsive(toXSmall) {
+        font-size: 1.3rem;
+      }
     }
   }
 
@@ -200,6 +166,11 @@
       width: 1.6rem;
       height: 1.6rem;
       fill: $yellow;
+
+      @include responsive(toSmall) {
+        width: 1.3rem;
+        height: 1.3rem;
+      }
     }
   }
   &__button {
@@ -211,7 +182,12 @@
     border: 1px solid $black;
     color: $black;
     cursor: pointer;
-
+    @include responsive(toSmall) {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.8rem 0;
+      border: 1px solid $black;
+    }
     &:focus {
       outline: none;
     }
@@ -242,9 +218,27 @@
   }
   &__arrowLeft {
     left: 75%;
+    @include responsive(toLarge) {
+      left: 73%;
+    }
+
+    @include responsive(toMedium) {
+      left: 70%;
+    }
+
+    @include responsive(toSmall) {
+      left: 66%;
+    }
   }
 
   &__arrowRight {
     right: 5%;
+    @include responsive(toLarge) {
+      right: 7%;
+    }
+
+    @include responsive(toSmall) {
+      left: 85%;
+    }
   }
 }
