@@ -1,13 +1,17 @@
 import Meta from "./Meta";
-// import Hero from "../components/Hero";
+import Footer from "./Footer";
 import Header from "./Header";
+import PopUp from "./PopUp";
+import Floater from "./Floater";
 const Layout = ({ children }) => {
   return (
     <>
       <Meta />
       <Header />
-      {/* <Hero /> */}
       <main>{children}</main>
+      <Footer />
+      <PopUp />
+      <Floater />
     </>
   );
 };
