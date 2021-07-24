@@ -3,9 +3,8 @@ import styles from "../styles/style.module.scss";
 import LatestProductItem from "./subcomponents/LatestProductItem";
 import Glide from "@glidejs/glide";
 
-const LatestProduct = () => {
+const LatestProduct = ({ products }) => {
   const glide1 = useRef();
-  console.log(glide1.current);
   useEffect(() => {
     new Glide(glide1.current, {
       type: "carousel",

@@ -1,10 +1,12 @@
 import styles from "../styles/style.module.scss";
 import CategoryItems from "./subcomponents/CategoryItems";
-const Category = () => {
+import ProductItem from "./subcomponents/ProductItems";
+
+const Category = ({ products }) => {
   const {
+    container,
     titleContainer,
     sectionActive,
-    container,
     category,
     categroy__tabList,
     category__tabs,
@@ -18,10 +20,9 @@ const Category = () => {
     "Featured Products",
   ];
 
-  console.log(categoryI);
   return (
     <section className={category}>
-      <div className={`${categroy__tabList} ${container}`}>
+      <div className={`${categroy__tabList}`}>
         <div className={`${category__tabs} ${titleContainer}`}>
           {categoryI.map((category, idx) => (
             <CategoryItems
@@ -33,8 +34,12 @@ const Category = () => {
           ))}
         </div>
 
-        <div className={category__container}>
-          <div className={category__center}></div>
+        <div className={`${category__container} ${container}`}>
+          <div className={category__center}>
+            {products.map((product, idx) => (
+              <ProductItem product={product} key={idx} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

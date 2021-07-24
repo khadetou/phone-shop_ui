@@ -5,7 +5,7 @@ import HeroItems from "./subcomponents/HeroItems";
 
 const Hero = () => {
   const glide = useRef();
-  console.log(glide.current);
+
   useEffect(() => {
     new Glide(glide.current, {
       type: "carousel",
