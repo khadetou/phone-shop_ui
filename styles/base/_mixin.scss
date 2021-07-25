@@ -1,4 +1,16 @@
 @mixin responsive($bkr) {
+  @if $bkr == toXLarge {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $bkr== toLarge {
+    @media only screen and (max-width: 999px) {
+      @content;
+    }
+  }
+
   @if $bkr == toMedium {
     @media only screen and (max-width: 768px) {
       @content;
@@ -6,11 +18,6 @@
   }
   @if $bkr == toSmall {
     @media only screen and (max-width: 568px) {
-      @content;
-    }
-  }
-  @if $bkr== toLarge {
-    @media only screen and (max-width: 999px) {
       @content;
     }
   }
